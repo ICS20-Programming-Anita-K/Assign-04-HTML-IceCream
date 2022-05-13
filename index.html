@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="description" content="The Vanilla Bean Creamery">
+    <meta name="keywords" content="immaculata, ics2o">
+    <meta name="author" content="Anita Kay">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
+    <link rel="manifest" href="./fav/site.webmanifest">
+    <!-- Link to style sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>The Vanilla Bean Creamery</title>
+  </head>
+  <body>
+    <!-- Link to JavaScript -->
+    <script src="./js/script.js"></script>
+    <center><h1>🍦The Vanilla Bean Creamery🍦</h1></center>
+		<table>
+			<tr align = "center">
+				<td valign="top" align="left">
+          <center><img src="./images/icecream.jpeg" alt="Ice Cream" width="27.3%"><img src="./images/cone.jpg" alt="Store" width="40%"></center>
+          <!-- Introduction -->
+          <center><h2>Welcome to the Vanilla Bean Creamery!</h2>
+          <h3>Since our first day open in 1962, the Vanilla Bean Creamery has been serving delicious, premium soft serve ice cream and putting smiles on faces for over 60 years. With a variety of Canada's favourite toppings, paired our scrumptious vanilla soft serve, the Vanilla Bean Creamery is guaranteed to have something for everyone. So, come on down and visit us in store, or order online using this website. Either way, thanks for visiting!</h3></center>
+          <!-- Border -->
+          <center><img src="./images/border.png" alt="Border" width="30%"><img src="./images/border.png" alt="Border" width="30%"><img src="./images/border.png" alt="Border" width="30%"></center>
+					<h3>Customize your soft serve order and see how much it will cost here:</h3>
+          <!-- Call JavaScript function -->
+					<form action="javascript: order()">	
+            <!-- Drop-down menu for size -->
+            <h4>What size would you like?</h4>
+						<label for="size">Size:</label>
+						<select name="size" id="size">
+						    <option value="">--Size--</option>
+						    <option value="Small">Small</option>
+						    <option value="Medium">Medium</option>
+						    <option value="Large">Large</option>
+						</select><br><br>
+            <!-- Checkboxes for toppings -->
+            <h4>What toppings would you like?</h4>
+            <input type="checkbox" id="hot-fudge" name="hot-fudge" value="Hot Fudge">
+            <label for="hot-fudge">Hot Fudge</label><br>
+            <input type="checkbox" id="rainbow-sprinkles" name="rainbow-sprinkles" value="Rainbow Sprinkles">
+            <label for="rainbow-sprinkles">Rainbow Sprinkles</label><br>
+            <input type="checkbox" id="chocolate-sprinkles" name="chocolate-sprinkles" value="Chocolate Sprinkles">
+            <label for="chocolate-sprinkles">Chocolate Sprinkles</label><br>
+            <input type="checkbox" id="caramel" name="caramel" value="Caramel">
+            <label for="caramel">Caramel</label><br>
+            <input type="checkbox" id="nuts" name="nuts" value="Nuts">
+            <label for="nuts">Nuts</label><br><br>
+            <!-- Radio button for chocolate dip -->
+            <h4>Would you like your soft serve to be dipped in chocolate?</h4>
+            <input type="radio" id="yes" name="choice" value="Yes">
+            <label for="yes">Yes, please!</label><br>
+            <input type="radio" id="no" name="choice" value="No">
+            <label for="no">No, thank you!</label><br><br><br>
+            <!-- Button to calculate -->
+						<input type="submit" value="Calculate Cost">
+					</form>
+				</td>
+			</tr>
+		</table>
+		<!-- Create a space where the user information will be displayed -->
+    <div id="calculate-cost">
+
+    </div>
+    <br>
+    <br>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+/* Created by: Anita Kay
+* Created on: May 2022
+* This CSS file defines the style for index.html
+* ICS2O-Assign-04-HTML-IceCream
+*/
+
+body {
+	background-color: #cfe1c9;
+}
+
+h1, h2 {
+	background-color: #94bb86;
+	color: #000000;
+	padding: 40px;
+	text-align: center;
+  font-family: "Georgia", Times, serif;
+}
+
+p, h3, h4, h5, h6 {
+  color: #000000;
+  font-family: "Georgia", Times, serif;
+}
+
+div {
+	
+  font-weight: bold;
+  color: #cfe1c9;
+  margin: 5px;
+}
+
+#display-results{
+  background-color: #000000;
+	font-size: 20px;
+  font-family: "Georgia", Times, serif;
+}
