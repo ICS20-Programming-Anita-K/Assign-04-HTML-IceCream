@@ -24,7 +24,8 @@ p, h3, h4, h5, h6 {
 div {
 	
   font-weight: bold;
-  color: #cfe1c9;
+  color: #000000;
+  background-color: #cfe1c9;
   margin: 5px;
 }
 

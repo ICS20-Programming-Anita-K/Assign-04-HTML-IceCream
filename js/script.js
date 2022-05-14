@@ -3,46 +3,56 @@
 // This file contains the JS functions for index.html
 
 "use strict"
-
+// This function displays the subtotal, tax, and total depending on the users customized order. 
 function order() {
   	// initialize variables
-	let cost = 0;
+	let sizeCost = 0;
   let dipCost = 0;
-	
+  let sizeMessage = "";
+  
 	// get size, toppings, and chocolate dip customizations
-	let size = document.getElementById('size');
+	let select = document.getElementById('size');
+  let size = select.options[select.selectedIndex].value;
   let boxes = document.querySelectorAll('input[type="checkbox"]:checked');
   const PRICE_TOPPINGS = 0.50;
   let toppings = boxes.length;
   let toppingsCost = toppings * PRICE_TOPPINGS;
 
-  // define constant
+  // define constants
   const HST = 0.13;
-
+  const SMALL_COST = 2.50;
+  const MEDIUM_COST = 3.50;
+  const LARGE_COST = 5.00;
+  const DIP_COST = 1.50;
+	
     // If the selected size is small, the cost is $2.50
 	if (size == "Small") {
-		cost = 2.50;
+		sizeCost = SMALL_COST;
 	}
-    // If the selected size is medium, the cost is $3.50
+    // Else, if the selected size is medium, the cost is $3.50
 	else if (size == "Medium") {
-		cost = 3.50;
+		sizeCost = MEDIUM_COST;
 	}
-  // If the selected size is large, the cost is $5.00
+  // Else, if the selected size is large, the cost is $5.00
     else if (size == "Large") {
-      cost = 5.00;
+      sizeCost = LARGE_COST;
     }
+  // Else, the cost is $0.00.
+  else {
+    sizeMessage = "(Please make a size selection above)";
+  }
   // If the "Yes, please" radio button is checked, there is an additional cost of $1.50
   if (document.getElementById('yes').checked) {
-    dipCost = 1.50;
+    dipCost = DIP_COST;
   }
   // If the "No, thank you" radio button is checked, there is no additional cost. 
-    else if (document.getElementById('no').checked) {
+    else {
       dipCost = 0;
     }
   // Calculations for subtotal, tax, and total.
-    let subtotal = cost + dipCost + toppingsCost
+    let subtotal = sizeCost + dipCost + toppingsCost
     let tax = subtotal * HST
     let total = subtotal + tax
   // display the cost
-  	document.getElementById('calculate-cost').innerHTML = "Subtotal = "+ subtotal +"<br>HST = "+ tax +"<br>Total = "+ total
+  	document.getElementById('calculate-cost').innerHTML = "Subtotal = $" + (Math.round(100*subtotal)/100).toFixed(2) + sizeMessage + "<br>HST = $" + (Math.round(100*tax)/100).toFixed(2) + "<br>Total = $" + (Math.round(100*total)/100).toFixed(2) + "";
 }
